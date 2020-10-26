@@ -1,6 +1,7 @@
+//whack-a-mole game
+
 function setup(){
   createCanvas(1800, 1200);
-  
 }
 
 function draw(){
