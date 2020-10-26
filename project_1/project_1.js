@@ -62,16 +62,8 @@ function reset(){
   line(0,600,1800,600);
 }
 
-class moles{
-  constructor(xvalue, yvalue){
-    this.xvalue = xvalue;
-    this.yvalue = yvalue;
-  }
-}
-
 function mole( x, y){
   //draws mole
-  
   //body
   strokeWeight(4);
   stroke(0);
@@ -99,12 +91,17 @@ function mole( x, y){
   ellipse(x+55,y-155,20,20);
 }
 
-function hole(x,y){
-  // draws hole in the ground
-  strokeWeight(4);
-  stroke(0);
-  fill(0);
-  ellipse(x,y,300,100);
+class shadows{
+  constructor(x, y){
+    this.x = x;
+    this.y = y;
+  }
+  draw() {
+    strokeWeight(4);
+    stroke(0);
+    fill(0);
+    ellipse(this.x,this.y,300,100);
+}
 }
 
 function hammer(x,y){
@@ -128,6 +125,7 @@ function hammer(x,y){
 
 let x_co = [300,900,1500];
 
+
 function formation_0(){
   // All six moles
   for (let i = 0; i <=2; i++) {
@@ -141,8 +139,9 @@ function formation_1(){
   reset();
   
   for (let i = 0; i <=2; i++) {
+    let hole1 = new shadows(x_co[i],300);
     if(i==0){
-      hole(x_co[i],300);
+      hole1.draw();
       mole(x_co[i],900);
     }else {
       mole(x_co[i],300);
@@ -156,9 +155,10 @@ function formation_2(){
   reset();
 
   for (let i = 0; i <=2; i++) {
+    let hole1 = new shadows(x_co[i],900);
     if(i==0){
       mole(x_co[i],300);
-      hole(x_co[i],900);
+      hole1.draw();
     }else {
       mole(x_co[i],300);
       mole(x_co[i],900);
@@ -171,8 +171,9 @@ function formation_3(){
   reset();
   
   for (let i = 0; i <=2; i++) {
+    let hole1 = new shadows(x_co[i],300);
     if(i==1){
-      hole(x_co[i],300);
+      hole1.draw();
       mole(x_co[i],900);
     }else {
       mole(x_co[i],300);
@@ -186,9 +187,10 @@ function formation_4(){
   reset();
   
   for (let i = 0; i <= 2; i++) {
+    let hole1 = new shadows(x_co[i],900);
     if(i==1){
       mole(x_co[i],300);
-      hole(x_co[i],900);
+      hole1.draw();
     }else {
       mole(x_co[i],300);
       mole(x_co[i],900);
@@ -201,8 +203,9 @@ function formation_5(){
   reset();
   
   for (let i = 0; i <=2; i++) {
+    let hole1 = new shadows(x_co[i],300);
     if(i==2){
-      hole(x_co[i],300);
+      hole1.draw();
       mole(x_co[i],900);
     }else {
       mole(x_co[i],300);
@@ -216,9 +219,10 @@ function formation_6(){
   reset();
   
   for (let i = 0; i <=2; i++) {
+    let hole1 = new shadows(x_co[i],900);
     if(i==2){
       mole(x_co[i],300);
-      hole(x_co[i],900);
+      hole1.draw();
     }else {
       mole(x_co[i],300);
       mole(x_co[i],900);
